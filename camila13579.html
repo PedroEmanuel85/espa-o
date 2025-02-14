@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Você, Camila ❤️</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffdde1;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+        .message {
+            font-size: 24px;
+            color: #d6336c;
+            white-space: pre-wrap;
+            overflow: hidden;
+            border-right: 2px solid black;
+            display: inline-block;
+            width: 0;
+            animation: typing 10s steps(120, end) forwards, blink 0.8s infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Camila 💌</h1>
+    <p class="message" id="mensagem"></p>
+    
+    <script>
+        let texto = `Camila, você é incrível! Obrigado por fazer parte da minha vida! 
+        Vc foi o melhor presente que Deus me deu, vc é tudo oq eu sempre sonhei, 
+        obrigado por ser paciente cmg, ainda mais com as lerdezas que eu dou direto 
+        e as raivas q faço vc passar, foi mal por qualquer coisa e eu te amo mais do que 
+        todo o contínuo espaço-tempo! ❤️`;
+        let elemento = document.getElementById("mensagem");
+        let i = 0;
+        
+        function escreverTexto() {
+            if (i < texto.length) {
+                elemento.innerHTML += texto.charAt(i);
+                i++;
+                setTimeout(escreverTexto, 50);
+            }
+        }
+        
+        window.onload = escreverTexto;
+    </script>
+</body>
+</html>
